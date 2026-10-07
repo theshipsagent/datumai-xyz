@@ -2,3 +2,4 @@
 # Keep repo docs off the published test site.
 exclude:
   - README.md
+  - SESSION_LOG.md
