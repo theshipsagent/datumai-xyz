@@ -1,0 +1,4 @@
+# GitHub Pages (Jekyll) settings
+# Keep repo docs off the published test site.
+exclude:
+  - README.md

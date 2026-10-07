@@ -3,98 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
     <title>Datum | Coming Soon</title>
-    <meta name="description" content="A new agent for a new era. Coming soon.">
+    <meta name="description" content="Datum: envisioning maritime supply chains of the future.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            min-height: 100vh;
             background: #0a0a0a;
             color: #ffffff;
-            position: relative;
-            overflow: hidden;
+            line-height: 1.6;
         }
 
-        .bg-image {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('images/bg-water.jpg') center/cover no-repeat;
-            opacity: 0.7;
-            z-index: 0;
+        a {
+            color: inherit;
         }
 
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
-            z-index: 1;
+        img {
+            display: block;
+            max-width: 100%;
         }
 
-        .container {
-            position: relative;
-            z-index: 10;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+        .eyebrow {
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 1rem;
         }
 
-        /* Header */
-        header {
-            padding: 2rem 3rem;
-        }
-
-        .brand {
-            text-align: left;
-        }
-
-        .brand-url {
-            font-size: 1.1rem;
-            font-weight: 500;
-            letter-spacing: 1px;
-            color: #ffffff;
-            margin-bottom: 0.3rem;
-        }
-
-        .brand-tagline {
-            font-size: 0.8rem;
+        h2 {
+            font-size: 2rem;
             font-weight: 300;
-            color: rgba(255,255,255,0.6);
             letter-spacing: 1px;
-            font-style: italic;
-        }
-
-        /* Main Content */
-        main {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .center-content {
-            text-align: center;
-        }
-
-        .inquiries {
-            font-size: 1.5rem;
-            font-weight: 300;
-            color: #ffffff;
-            letter-spacing: 2px;
+            line-height: 1.3;
             margin-bottom: 1.5rem;
         }
 
-        .contact-link {
+        p {
+            font-weight: 300;
+            color: rgba(255,255,255,0.75);
+        }
+
+        .button {
             display: inline-block;
             padding: 0.8rem 2rem;
             border: 1px solid rgba(255,255,255,0.3);
@@ -106,9 +66,199 @@
             transition: all 0.3s ease;
         }
 
-        .contact-link:hover {
+        .button:hover {
             background: rgba(255,255,255,0.1);
             border-color: rgba(255,255,255,0.6);
+        }
+
+        .button-quiet {
+            border-color: transparent;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .button-quiet:hover {
+            background: none;
+            border-color: transparent;
+            color: #ffffff;
+        }
+
+        /* Header */
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 2rem 3rem;
+        }
+
+        .brand-url {
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            padding-top: 0.2rem;
+        }
+
+        nav a {
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        /* Full-bleed photo sections */
+        .photo-section {
+            position: relative;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .photo-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.7) 100%);
+        }
+
+        .photo-section > * {
+            position: relative;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 1.5rem 4rem;
+            background-image: url('images/hero.jpg');
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 300;
+            letter-spacing: 6px;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            font-style: italic;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Content sections */
+        section {
+            scroll-margin-top: 1rem;
+        }
+
+        .inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 7rem 3rem;
+        }
+
+        .split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .split p + p {
+            margin-top: 1rem;
+        }
+
+        .split img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Focus areas */
+        .focus {
+            background-image: url('images/hero-bg.jpg');
+        }
+
+        .focus::before {
+            background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.85) 100%);
+        }
+
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .focus-item {
+            border-top: 1px solid rgba(255,255,255,0.3);
+            padding-top: 1.5rem;
+        }
+
+        .focus-item h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+
+        .focus-item p {
+            font-size: 0.9rem;
+        }
+
+        /* Reports */
+        .status {
+            display: inline-block;
+            margin-top: 2rem;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Contact */
+        .contact {
+            text-align: center;
+            background-image: url('images/bg-water.jpg');
+        }
+
+        .contact .inner {
+            padding-top: 9rem;
+            padding-bottom: 9rem;
+        }
+
+        .inquiries {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #ffffff;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
         }
 
         /* Footer */
@@ -123,41 +273,137 @@
             letter-spacing: 1px;
         }
 
+        @media (max-width: 900px) {
+            .focus-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .split {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .reports .split img {
+                order: 2;
+            }
+        }
+
         @media (max-width: 768px) {
             header {
                 padding: 1.5rem;
             }
+            nav {
+                display: none;
+            }
             .brand-url {
                 font-size: 0.95rem;
+            }
+            .hero h1 {
+                font-size: 2.75rem;
+                letter-spacing: 4px;
+            }
+            .hero .tagline {
+                font-size: 0.95rem;
+            }
+            .inner {
+                padding: 4.5rem 1.5rem;
+            }
+            h2 {
+                font-size: 1.5rem;
             }
             .inquiries {
                 font-size: 1.2rem;
             }
         }
+
+        @media (max-width: 520px) {
+            .focus-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="bg-image"></div>
-    <div class="overlay"></div>
+    <header>
+        <a href="#top" class="brand-url">Datum</a>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#focus">Focus</a>
+            <a href="#reports">Reports</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-    <div class="container">
-        <header>
-            <div class="brand">
-                <div class="brand-url">Datum</div>
-                <div class="brand-tagline">envisioning maritime supply chains of the future</div>
+    <main>
+        <section class="hero photo-section" id="top">
+            <div>
+                <h1>Datum</h1>
+                <p class="tagline">envisioning maritime supply chains of the future</p>
+                <div class="hero-actions">
+                    <a href="#about" class="button">Learn more</a>
+                    <a href="mailto:contact@theshipsagent.com" class="button button-quiet">Contact</a>
+                </div>
             </div>
-        </header>
+        </section>
 
-        <main>
-            <div class="center-content">
+        <section class="about" id="about">
+            <div class="inner split">
+                <div>
+                    <p class="eyebrow">About</p>
+                    <h2>A fixed point of reference for maritime trade.</h2>
+                    <p>In surveying, a datum is the fixed point every other measurement is taken from. Datum sets out to be that reference for maritime supply chains.</p>
+                    <p>We are bringing together information on vessels, ports, terminals and the cargo that moves between them, so the people who plan and run those supply chains can work from the same picture.</p>
+                </div>
+                <img src="images/about.jpg" alt="Bulk cargo being loaded into a ship's hold at night" width="1623" height="1080" loading="lazy">
+            </div>
+        </section>
+
+        <section class="focus photo-section" id="focus">
+            <div class="inner">
+                <p class="eyebrow">Focus</p>
+                <h2>What we're working on.</h2>
+                <div class="focus-grid">
+                    <div class="focus-item">
+                        <h3>Ports &amp; terminals</h3>
+                        <p>How cargo moves through berths and terminals, and the landside links behind them.</p>
+                    </div>
+                    <div class="focus-item">
+                        <h3>Vessels &amp; voyages</h3>
+                        <p>Ship movements, port calls and the timing that shapes every supply chain.</p>
+                    </div>
+                    <div class="focus-item">
+                        <h3>Cargo flows</h3>
+                        <p>Bulk, break-bulk and liquid cargoes, followed from origin to destination.</p>
+                    </div>
+                    <div class="focus-item">
+                        <h3>Supply-chain visibility</h3>
+                        <p>Joining these pieces so constraints are easier to see and plan around.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reports" id="reports">
+            <div class="inner split">
+                <img src="images/reports-bg.jpg" alt="A ship's bow cutting through the sea" width="1080" height="1080" loading="lazy">
+                <div>
+                    <p class="eyebrow">Reports</p>
+                    <h2>Reports &amp; insights.</h2>
+                    <p>Research on maritime markets, ports and cargo flows is in preparation.</p>
+                    <p>If you'd like to hear when the first report is published, get in touch.</p>
+                    <span class="status">Coming soon</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact photo-section" id="contact">
+            <div class="inner">
                 <p class="inquiries">inquiries?</p>
-                <a href="mailto:contact@theshipsagent.com" class="contact-link">Contact</a>
+                <a href="mailto:contact@theshipsagent.com" class="button">Contact</a>
             </div>
-        </main>
+        </section>
+    </main>
 
-        <footer>
-            <p>coming soon</p>
-        </footer>
-    </div>
+    <footer>
+        <p>&copy; 2026 Datum</p>
+    </footer>
 </body>
 </html>
