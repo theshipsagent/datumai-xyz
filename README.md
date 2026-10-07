@@ -10,7 +10,8 @@ It's a single static page: no build step, no framework, no JavaScript. The page 
 |---|---|
 | `index.html` | The whole site, with its CSS in a `<style>` block in the page |
 | `CNAME` | Tells GitHub Pages to serve the site at `datumai.xyz` |
-| `_config.yml` | GitHub Pages settings; stops this README being published on the site |
+| `_config.yml` | GitHub Pages settings; stops this README and the session log being published on the site |
+| `SESSION_LOG.md` | Notes on past work sessions: what changed, domain facts, open items |
 | `images/hero.jpg` | Hero background (refinery at dusk) |
 | `images/about.jpg` | About section photo (bulk cargo loading) |
 | `images/hero-bg.jpg` | Focus section background (launch on dark water) |
